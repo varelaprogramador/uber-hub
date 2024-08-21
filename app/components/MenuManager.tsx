@@ -8,6 +8,7 @@ import { SideMenu } from './SideMenu';
 
 import Image from 'next/image';
 import { MenuIcon,DoorOpen, X } from 'lucide-react';
+import Link from 'next/link';
 
 
 export function ManagerMenu({ children }: { children: React.ReactNode }) {
@@ -20,19 +21,20 @@ export function ManagerMenu({ children }: { children: React.ReactNode }) {
 
   return (
   <body>
-     <header className="w-full h-[110px] p-4 flex justify-between bg-roxo items-center drop-shadow-lg sticky top-0 z-[999]">
-      <div className="flex items-center gap-4">
+     <header className="w-full h-[110px] p-4 flex justify-between bg-roxo items-center drop-shadow-lg sticky top-0 z-[999] max-sm:justify-around">
+      <div className="flex items-center gap-4 max-sm:justify-around ">
+        <Link target="_top" href="/">
         <Image
           src="/assets/logo-uberhub.svg"
           alt="Logo uberhub"
           width={500}
           height={500}
           quality={100}
-          className="w-[125px] h-full"
-        />
+          className="w-[125px] h-full max-sm:order-2"
+        /></Link>
         
-         <button  onClick={setMenu}>
-        {menuOpen?<X color="#FFFFFF"/>:<MenuIcon color="#FFFFFF" className=' outline-none '/> }
+         <button className='max-sm:order-1'  onClick={setMenu}>
+        {menuOpen?<X color="#FFFFFF"/>:<MenuIcon color="#FFFFFF" className=' outline-none  '/> }
         </button>
          
       </div>
@@ -45,7 +47,7 @@ export function ManagerMenu({ children }: { children: React.ReactNode }) {
 
 
     <div className="flex">
-      <div className={menuOpen ? "w-48" : "w-20"}>
+      <div className={`${menuOpen ? "w-48 max-sm:visible" : "w-20 max-sm:hidden"} `}>
         <SideMenu expand={menuOpen} />
       </div>
      
