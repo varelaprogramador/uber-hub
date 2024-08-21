@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 import { LayoutGrid, Leaf, Info, CircleDollarSign, Banknote, MailIcon, SquarePlus, ShieldCheck } from "lucide-react";
 
 export function SideMenu({ ...ExpandMenu }) {
+    
+    
+  const [currentPath, setCurrentPath] = useState('/');
 
-    let currentPath = window.location.pathname;
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentPath(window.location.pathname);
+    }
+  }, []);
+    
   console.log(currentPath);
 
   return (
