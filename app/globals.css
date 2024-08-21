@@ -30,4 +30,20 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .bg-roxo {
+    background-color: #5000B7;
+  }
+  .text-roxo {
+    color: #5000B7;
+  }
+  .icon-roxo {
+    color: #5000B7;
+  }
+  /* styles.css */
+.side-menu {
+  transition: width 0.3s ease-in-out;
+}
+
+
+  
 }
