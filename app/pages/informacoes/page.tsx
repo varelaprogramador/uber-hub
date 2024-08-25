@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Informacoes() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center  gap-8 bg-white ">
+    <main className="flex min-h-screen w-full flex-col items-center  gap-8 bg-white overflow-x-hidden">
 
       <section
         className="flex w-full max-sm:h-[150px] max-sm:bg-left-top min-h-[300px]  items-center justify-between max-sm:justify-start max-sm:items-end p-7 bg-cover bg-center"
