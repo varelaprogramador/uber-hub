@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+
 interface VagaProps {
   title: string;
   company: string;
@@ -9,6 +10,10 @@ interface VagaProps {
   dateExpiration: Date;
   imageUrl: string | undefined;
   link: string;
+  tipo: string,
+  experiencia: string,
+  salario: string,
+  modalidade: string
 }
 
 export default function VagaItem({ title, company, description, tags, datePosted, dateExpiration, imageUrl, link }: VagaProps) {

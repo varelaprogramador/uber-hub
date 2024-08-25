@@ -1,20 +1,7 @@
 "use client";
 import { useState } from 'react';
 
-interface Vaga {
-  title: string;
-  company: string;
-  description: string;
-  tags: string[];
-  datePosted: Date;
-  dateExpiration: Date;
-  imageUrl: string;
-  link: string;
-  tipo: string,
-  experienci: string,
-  salario: string,
-  modalidade: string
-}
+import {Vaga} from "../../../utils/Vaga";
 
 interface SearchBarVagasProps {
   vagas: Vaga[];

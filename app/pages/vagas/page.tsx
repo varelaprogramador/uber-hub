@@ -1,8 +1,9 @@
 "use client";
 import { useState } from 'react';
-import VagaItem from '../../utils/vagasStruct';
+import VagaItem from './components/vagasStruct';
 import SearchBarVagas from './components/searchBar';
 import DropdownFilter from './components/dropdownFilter';
+import {Vaga} from "../../utils/Vaga";
 
 export default function Vagas() {
   const vagas = [
@@ -64,8 +65,7 @@ export default function Vagas() {
     },
     // Outras vagas...
   ];
-
-  const [filteredVagas, setFilteredVagas] = useState(vagas);
+  const [filteredVagas, setFilteredVagas] = useState<Vaga[]>(vagas);
 
   const [empresa, setEmpresa] = useState<string[]>([]);
   const [tipoVaga, setTipoVaga] = useState<string[]>([]);
@@ -95,11 +95,15 @@ export default function Vagas() {
     setFilteredVagas(updatedVagas);
   };
 
+  const handleFilteredVagas = (vagas: Vaga[]) => {
+    setFilteredVagas(vagas);
+  };
+
   return (
     <main className="flex min-h-screen w-full flex-col items-center p-8 gap-8 bg-white">
       <div className="w-full ">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Vagas & Oportunidades de Inovação</h1>
-        <SearchBarVagas vagas={vagas} onFilteredVagas={setFilteredVagas} />
+        <SearchBarVagas vagas={vagas} onFilteredVagas={handleFilteredVagas} />
         {/* Dropdown Filters */}
         <div className="flex gap-4 mb-6 max-md:flex-col">
           <DropdownFilter
@@ -161,8 +165,11 @@ export default function Vagas() {
               datePosted={vaga.datePosted}
               dateExpiration={vaga.dateExpiration}
               imageUrl={vaga.imageUrl}
-              link={vaga.link}
-            />
+              link={vaga.link} 
+              tipo={''} 
+              experiencia={''} 
+              salario={''} 
+              modalidade={''}            />
           ))
         ) : (
           <p className="text-gray-500">Nenhuma vaga encontrada.</p>
