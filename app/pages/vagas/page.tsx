@@ -100,7 +100,7 @@ export default function Vagas() {
   };
 
   return (
-    <main className="flex min-h-screen w-full flex-col items-center p-8 gap-8 bg-white">
+    <main className="flex min-h-screen w-full flex-col items-center p-8 gap-8 bg-white overflow-x-hidden">
       <div className="w-full ">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Vagas & Oportunidades de Inovação</h1>
         <SearchBarVagas vagas={vagas} onFilteredVagas={handleFilteredVagas} />

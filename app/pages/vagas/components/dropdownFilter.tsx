@@ -30,7 +30,7 @@ export default function DropdownFilter({ label, options, selectedOptions, onChan
         {label}
       </button>
       {isOpen && (
-        <div className="absolute mt-16 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-[50] max-md:w-[50vh]">
+        <div className="absolute mt-16 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-[50] max-md:w-[40vh]">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {options.map((option) => (
               <label key={option} className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">

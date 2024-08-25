@@ -31,7 +31,7 @@ export default function VagaItem({ title, company, description, tags, datePosted
 
   return (
     <div className="flex border rounded-lg shadow-lg p-4 mb-4 max-xl:w-full max-w-[1550px]">
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 max-sm:hidden">
         <Image src={imageUrl == undefined ? "/assets/sem-foto.gif" : imageUrl} alt={company} width={200} height={80} className="rounded" />
       </div>
       <div className="flex-grow ml-4">
